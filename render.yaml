@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: nexus-learn-lms
+    env: python
+    buildCommand: "echo 'Build completed'"
+    startCommand: "python main.py"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: MONGODB_URL
+        fromDatabase:
+          name: nexus-learn-db
+          property: connectionString
+      - key: DATABASE_NAME
+        value: nexus_learn_db
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ENVIRONMENT
+        value: production
+
+databases:
+  - name: nexus-learn-db
+    databaseName: nexus_learn_db
+    user: nexus_user

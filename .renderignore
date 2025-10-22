@@ -1,0 +1,29 @@
+# Development files
+*.pyc
+__pycache__/
+.pytest_cache/
+.coverage
+.env
+.env.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Documentation (optional)
+README.md
+docs/
+
+# Local development
+node_modules/
+*.log
