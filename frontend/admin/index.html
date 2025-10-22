@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Learn - Admin Panel</title>
+    <link rel="stylesheet" href="/static/css/admin.css">
+    <link rel="stylesheet" href="/static/css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app" class="admin-app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>🚀 Nexus Admin</h2>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <span></span>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-item active" data-page="dashboard">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+                <a href="#users" class="nav-item" data-page="users">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-label">Users</span>
+                </a>
+                <a href="#courses" class="nav-item" data-page="courses">
+                    <span class="nav-icon">📚</span>
+                    <span class="nav-label">Courses</span>
+                </a>
+                <a href="#media" class="nav-item" data-page="media">
+                    <span class="nav-icon">🎥</span>
+                    <span class="nav-label">Media</span>
+                </a>
+                <a href="#analytics" class="nav-item" data-page="analytics">
+                    <span class="nav-icon">📈</span>
+                    <span class="nav-label">Analytics</span>
+                </a>
+                <a href="#settings" class="nav-item" data-page="settings">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-label">Settings</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">👤</div>
+                    <div class="user-details">
+                        <span class="user-name">Admin User</span>
+                        <span class="user-role">Administrator</span>
+                    </div>
+                </div>
+                <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle" id="menuToggle">☰</button>
+                    <h1 class="page-title" id="pageTitle">Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <button class="theme-toggle" id="themeToggle">🌙</button>
+                    <div class="notifications">
+                        <button class="notification-btn">🔔</button>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn btn-primary" onclick="showCreateModal()">➕ Create New</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Page -->
+            <div id="dashboard" class="page active">
+                <div class="dashboard-grid">
+                    <!-- Stats Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">👥</div>
+                            <div class="stat-content">
+                                <h3>Total Users</h3>
+                                <p class="stat-number" data-count="1247">0</p>
+                                <span class="stat-change positive">+12% this month</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">📚</div>
+                            <div class="stat-content">
+                                <h3>Active Courses</h3>
+                                <p class="stat-number" data-count="45">0</p>
+                                <span class="stat-change positive">+8% this month</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🎯</div>
+                            <div class="stat-content">
+                                <h3>Completion Rate</h3>
+                                <p class="stat-number" data-count="87">0</p>
+                                <span class="stat-suffix">%</span>
+                                <span class="stat-change positive">+3% this month</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">⚡</div>
+                            <div class="stat-content">
+                                <h3>Engagement</h3>
+                                <p class="stat-number" data-count="92">0</p>
+                                <span class="stat-suffix">%</span>
+                                <span class="stat-change positive">+5% this month</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts -->
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>User Activity</h3>
+                            <select class="chart-filter">
+                                <option>Last 7 days</option>
+                                <option>Last 30 days</option>
+                                <option>Last 3 months</option>
+                            </select>
+                        </div>
+                        <canvas id="activityChart"></canvas>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="activity-feed">
+                        <h3>Recent Activity</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon user">👤</div>
+                                <div class="activity-content">
+                                    <p><strong>John Doe</strong> completed course "Web Development Basics"</p>
+                                    <span class="activity-time">2 minutes ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon course">📚</div>
+                                <div class="activity-content">
+                                    <p>New course <strong>"Advanced React"</strong> was published</p>
+                                    <span class="activity-time">5 minutes ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon media">🎥</div>
+                                <div class="activity-content">
+                                    <p>Video <strong>"Introduction to APIs"</strong> uploaded successfully</p>
+                                    <span class="activity-time">10 minutes ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other pages (users, courses, etc.) will be loaded dynamically -->
+            <div id="users" class="page">
+                <div class="page-header">
+                    <h2>User Management</h2>
+                    <div class="page-actions">
+                        <input type="search" placeholder="Search users..." class="search-input">
+                        <button class="btn btn-primary" onclick="createUser()">➕ Add User</button>
+                    </div>
+                </div>
+                <div class="users-table">
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Last Login</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usersTableBody">
+                                <!-- Users will be loaded dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional pages placeholder -->
+            <div id="courses" class="page">
+                <h2>Course Management</h2>
+                <p>Course management interface coming soon...</p>
+            </div>
+
+            <div id="media" class="page">
+                <h2>Media Management</h2>
+                <p>Media management interface coming soon...</p>
+            </div>
+
+            <div id="analytics" class="page">
+                <h2>Advanced Analytics</h2>
+                <p>Advanced analytics dashboard coming soon...</p>
+            </div>
+
+            <div id="settings" class="page">
+                <h2>System Settings</h2>
+                <p>System configuration coming soon...</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div id="createModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create New</h3>
+                <button class="modal-close" onclick="closeModal('createModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Create new content options will appear here...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/admin.js"></script>
+    <script src="/static/js/charts.js"></script>
+</body>
+</html>

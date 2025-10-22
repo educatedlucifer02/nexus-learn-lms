@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nexus Learn - Modern Animated Learning Management System">
+    <title>Nexus Learn - Modern Learning Platform</title>
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-animation">
+            <div class="logo-container">
+                <h1>🚀 Nexus Learn</h1>
+                <div class="loading-spinner"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2>🚀 Nexus Learn</h2>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#courses" class="nav-link">Courses</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="/admin" class="nav-link admin-link">Admin</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title animate-fade-up">
+                        Modern Learning <span class="gradient-text">Reimagined</span>
+                    </h1>
+                    <p class="hero-description animate-fade-up delay-1">
+                        Experience the future of education with our advanced learning management system featuring real-time sync, AI-powered analytics, and seamless Telegram integration.
+                    </p>
+                    <div class="hero-actions animate-fade-up delay-2">
+                        <button class="btn btn-primary btn-large" onclick="openApp()">
+                            🚀 Launch App
+                        </button>
+                        <button class="btn btn-outline btn-large" onclick="viewDemo()">
+                            👁️ View Demo
+                        </button>
+                    </div>
+                    <div class="hero-stats animate-fade-up delay-3">
+                        <div class="stat">
+                            <span class="stat-number" data-count="1000">0</span>
+                            <span class="stat-label">Students</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-label">Courses</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="25">0</span>
+                            <span class="stat-label">Instructors</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-cards">
+                        <div class="card-3d card-1">
+                            <h3>📊 Analytics</h3>
+                            <p>Real-time insights</p>
+                        </div>
+                        <div class="card-3d card-2">
+                            <h3>🎥 Video Player</h3>
+                            <p>Advanced controls</p>
+                        </div>
+                        <div class="card-3d card-3">
+                            <h3>📱 Mobile Ready</h3>
+                            <p>Responsive design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Powerful Features</h2>
+                    <p class="section-description">
+                        Built with modern technologies for an exceptional learning experience
+                    </p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="feature-icon">🎨</div>
+                        <h3>Modern UI/UX</h3>
+                        <p>Beautiful, intuitive interface with smooth animations and responsive design</p>
+                        <ul class="feature-list">
+                            <li>Dark/Light theme support</li>
+                            <li>Smooth animations</li>
+                            <li>Mobile-first design</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Real-time Sync</h3>
+                        <p>Instant synchronization across all devices with WebSocket technology</p>
+                        <ul class="feature-list">
+                            <li>Live progress tracking</li>
+                            <li>Instant notifications</li>
+                            <li>Real-time collaboration</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon">🤖</div>
+                        <h3>Telegram Integration</h3>
+                        <p>Seamless bot integration with miniapp support and cloud storage</p>
+                        <ul class="feature-list">
+                            <li>Direct miniapp launch</li>
+                            <li>Cloud file storage</li>
+                            <li>Push notifications</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-icon">📊</div>
+                        <h3>Advanced Analytics</h3>
+                        <p>Comprehensive dashboard with interactive charts and insights</p>
+                        <ul class="feature-list">
+                            <li>User engagement metrics</li>
+                            <li>Progress visualization</li>
+                            <li>Performance insights</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-icon">🎥</div>
+                        <h3>Media Player</h3>
+                        <p>Custom video player with advanced controls and PDF viewer</p>
+                        <ul class="feature-list">
+                            <li>Speed control</li>
+                            <li>Bookmark system</li>
+                            <li>Note-taking integration</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="feature-icon">🔐</div>
+                        <h3>Security First</h3>
+                        <p>Enterprise-grade security with JWT authentication and encryption</p>
+                        <ul class="feature-list">
+                            <li>Role-based access</li>
+                            <li>Data encryption</li>
+                            <li>Audit logging</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section id="tech" class="tech-stack">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Built with Modern Technology</h2>
+                    <p class="section-description">
+                        Powered by the latest and most reliable technologies
+                    </p>
+                </div>
+                <div class="tech-grid">
+                    <div class="tech-category">
+                        <h3>Frontend</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">HTML5</span>
+                            <span class="tech-item">CSS3</span>
+                            <span class="tech-item">JavaScript ES2021+</span>
+                            <span class="tech-item">WebSocket</span>
+                            <span class="tech-item">Service Workers</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h3>Backend</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">FastAPI</span>
+                            <span class="tech-item">Python 3.11+</span>
+                            <span class="tech-item">MongoDB</span>
+                            <span class="tech-item">Redis</span>
+                            <span class="tech-item">JWT</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h3>Infrastructure</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">Docker</span>
+                            <span class="tech-item">Nginx</span>
+                            <span class="tech-item">Prometheus</span>
+                            <span class="tech-item">Grafana</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Transform Your Learning?</h2>
+                    <p>Join thousands of students and educators already using Nexus Learn</p>
+                    <div class="cta-actions">
+                        <button class="btn btn-primary btn-large" onclick="openApp()">
+                            🚀 Get Started Now
+                        </button>
+                        <button class="btn btn-outline btn-large" onclick="openDocs()">
+                            📚 View Documentation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🚀 Nexus Learn</h3>
+                    <p>Modern learning management system with real-time sync and advanced features.</p>
+                    <div class="footer-links">
+                        <a href="/api/docs">API Docs</a>
+                        <a href="/health">Health Check</a>
+                        <a href="https://github.com/educatedlucifer02/nexus-learn-lms">GitHub</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <ul>
+                        <li><a href="#features">Modern UI/UX</a></li>
+                        <li><a href="#features">Real-time Sync</a></li>
+                        <li><a href="#features">Telegram Bot</a></li>
+                        <li><a href="#features">Advanced Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/admin">Admin Panel</a></li>
+                        <li><a href="/api/docs">API Documentation</a></li>
+                        <li><a href="/health">System Status</a></li>
+                        <li><a href="https://t.me/nexuslearn_support">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nexus Learn. Built with ❤️ for modern education.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/animations.js"></script>
+    <script src="/static/js/utils.js"></script>
+</body>
+</html>

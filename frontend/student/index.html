@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Learn - Student Portal</title>
+    <link rel="stylesheet" href="/static/css/student.css">
+    <link rel="stylesheet" href="/static/css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="student-app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-container">
+                <div class="header-left">
+                    <h1>🚀 Nexus Learn</h1>
+                </div>
+                <div class="header-center">
+                    <div class="search-bar">
+                        <input type="search" placeholder="Search courses, videos, PDFs..." id="searchInput">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="theme-toggle" id="themeToggle">🌙</button>
+                    <div class="user-menu">
+                        <button class="user-avatar">👤</button>
+                        <div class="dropdown-menu">
+                            <a href="#profile">Profile</a>
+                            <a href="#settings">Settings</a>
+                            <a href="#logout">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard -->
+            <section class="dashboard">
+                <div class="welcome-banner">
+                    <h2>Welcome back, Student! 👋</h2>
+                    <p>Continue your learning journey with personalized courses and real-time progress tracking.</p>
+                </div>
+
+                <!-- Progress Overview -->
+                <div class="progress-overview">
+                    <div class="progress-card">
+                        <h3>Overall Progress</h3>
+                        <div class="circular-progress">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle" cx="60" cy="60" r="50"></circle>
+                            </svg>
+                            <span class="progress-text">67%</span>
+                        </div>
+                        <p>4 of 6 courses completed</p>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">28</span>
+                            <span class="stat-label">Hours Learned</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">156</span>
+                            <span class="stat-label">Videos Watched</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Certificates</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">89%</span>
+                            <span class="stat-label">Avg. Score</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- My Courses -->
+                <div class="my-courses">
+                    <div class="section-header">
+                        <h3>My Courses</h3>
+                        <button class="btn btn-outline">View All</button>
+                    </div>
+                    <div class="courses-grid" id="coursesGrid">
+                        <!-- Courses will be loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Continue Learning -->
+                <div class="continue-learning">
+                    <h3>Continue Learning</h3>
+                    <div class="learning-cards">
+                        <div class="learning-card">
+                            <div class="learning-thumbnail">
+                                <img src="/static/images/course-placeholder.jpg" alt="Course thumbnail">
+                                <button class="play-btn">▶️</button>
+                            </div>
+                            <div class="learning-content">
+                                <h4>Advanced Web Development</h4>
+                                <p>Chapter 5: React Hooks Deep Dive</p>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 65%"></div>
+                                </div>
+                                <span class="progress-text">65% complete</span>
+                            </div>
+                        </div>
+
+                        <div class="learning-card">
+                            <div class="learning-thumbnail">
+                                <img src="/static/images/course-placeholder.jpg" alt="Course thumbnail">
+                                <button class="play-btn">▶️</button>
+                            </div>
+                            <div class="learning-content">
+                                <h4>Data Science Fundamentals</h4>
+                                <p>Module 3: Machine Learning Basics</p>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 40%"></div>
+                                </div>
+                                <span class="progress-text">40% complete</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommended Courses -->
+                <div class="recommended-courses">
+                    <h3>Recommended for You</h3>
+                    <div class="recommendations-slider">
+                        <div class="recommendation-card">
+                            <div class="course-image">
+                                <img src="/static/images/course-placeholder.jpg" alt="Course">
+                            </div>
+                            <div class="course-info">
+                                <h4>Mobile App Development</h4>
+                                <p>React Native & Flutter</p>
+                                <div class="course-meta">
+                                    <span>⭐ 4.8</span>
+                                    <span>👥 1,234 students</span>
+                                    <span>⏱️ 20 hours</span>
+                                </div>
+                                <button class="btn btn-primary">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div id="videoModal" class="modal video-modal">
+        <div class="modal-content">
+            <div class="video-container">
+                <video id="videoPlayer" controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                    <div class="video-info">
+                        <h3 id="videoTitle">Video Title</h3>
+                        <p id="videoDescription">Video description will appear here...</p>
+                    </div>
+                    <div class="video-actions">
+                        <button class="btn btn-outline">📝 Take Notes</button>
+                        <button class="btn btn-outline">🔖 Bookmark</button>
+                        <button class="btn btn-outline" onclick="closeVideoModal()">✕ Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/student.js"></script>
+    <script src="/static/js/video-player.js"></script>
+</body>
+</html>
