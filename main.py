@@ -27,7 +27,7 @@ except ImportError:
     class Settings:
         def __init__(self):
             self.ALLOWED_HOSTS = ["*"]
-            self.MONGODB_URL = os.getenv("MONGODB_URL", "mongodb://localhost:27017")
+            self.MONGODB_URL = os.getenv("MONGODB_URL", "mongodb+srv://educatedlucifer:lucifer007@cluster0.pzdd4sm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
             self.DATABASE_NAME = os.getenv("DATABASE_NAME", "nexus_learn_db")
     
     def get_settings():
